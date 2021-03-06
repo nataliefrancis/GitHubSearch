@@ -4,6 +4,13 @@ import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 import BootstrapTable from 'react-bootstrap-table-next';
 import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
 import axios from "axios";
+import Details from './details';
+
+const tableRowEvents = {
+    onClick: (e, row, rowIndex) => {
+      console.log(`clicked on row with index: ${rowIndex}`);
+    }
+ }
  
 export class Table extends Component {
     state = {
@@ -61,7 +68,8 @@ export class Table extends Component {
                 keyField='id'   
                 data={ this.state.repository }   
                 columns={ this.state.columns }
-                filter={ filterFactory() }  />  
+                filter={ filterFactory() } 
+                rowEvents={ tableRowEvents } />  
             </div>  
         )  
     }  
