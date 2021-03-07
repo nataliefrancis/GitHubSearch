@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 // import { useHistory } from 'react-router-dom';
 // import { Redirect } from 'react-router';
 import axios from "axios";
-import { Card } from 'react-bootstrap';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Card, Container, Col, Row } from 'react-bootstrap';
 import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 import BootstrapTable from 'react-bootstrap-table-next';
 import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
@@ -25,19 +26,19 @@ const expandRow = {
     renderer: (row, rowIndex) => (
         <Card>
         <Card.Body>
-            <div className="row">
-                <div className="col-2"><Card.Img src={row.owner.avatar_url} /></div>
-                <div className="col">
+            <Row>
+                <Col className="col-2"><Card.Img src={row.owner.avatar_url} /></Col>
+                <Col>
                     <Card.Title>{ `${row.name}` }</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">Author: { `${row.owner.login}` }</Card.Subtitle>
                     <Card.Subtitle className="mb-2">Last Update: { `${row.updated_at}` }</Card.Subtitle>
-                </div>
-                <div className="col">
+                </Col>
+                <Col>
                     <Card.Text>{ `${row.description}` }</Card.Text>
                     <Card.Text>{ `${row.language}` }</Card.Text>
                     <Card.Link href={row.url}>Repo Link</Card.Link>
-                </div>
-            </div>
+                </Col>
+            </Row>
         </Card.Body>
     </Card>
     ),
@@ -105,7 +106,7 @@ export class Table extends Component {
         return (  
             <div>
                 <Header></Header>
-                <div className="container top-margin">   
+                <Container className="top-margin">   
                     <BootstrapTable   
                     striped  
                     hover  
@@ -115,7 +116,7 @@ export class Table extends Component {
                     filter={ filterFactory() } 
                     //rowEvents={ tableRowEvents }
                     expandRow={ expandRow }/>
-                </div> 
+                </Container> 
             </div>
         )  
     }  
