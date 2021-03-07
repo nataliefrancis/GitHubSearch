@@ -49,6 +49,7 @@ export class Table extends Component {
     //TO-DO: Classes not being recognized, bootstrap or otherwise. Carets not showing.
 
     state = {
+        error: null,
         repository: [],
         columns: [{  
             dataField: 'any',  
@@ -98,6 +99,10 @@ export class Table extends Component {
             console.log(res);
             this.setState({    
                 repository: res.data.items  
+            })
+            .catch(error => {
+                this.setState({error: error.message});
+                console.log("API error response: "+error);
             });
         })
     }
