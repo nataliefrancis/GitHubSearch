@@ -33,6 +33,12 @@ label:focus,
     box-shadow: none !important;
 }
 
+.table thead th {
+  vertical-align: text-top !important;
+  background-color: #17a2b8;
+  color: #FFF;
+}
+
 /*----Fonts----*/
 .myFont {
   font-family: 'Shadows Into Light', cursive;
@@ -62,3 +68,23 @@ label:focus,
 }
 /*-----------------*/
 
+/*----Results Page----*/
+.top-margin {
+  margin-top: 2%;
+}
+
+.sm-wide {
+  width: 50px;
+}
+
+.lg-wide {
+  width: 350px;
+}
+
+.point:hover {
+  cursor: pointer;
+}
+
+.card-img {
+  width: 100px;
+}
