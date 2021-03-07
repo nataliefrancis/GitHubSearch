@@ -25,22 +25,22 @@ import Header from './header';
 const expandRow = {
     renderer: (row, rowIndex) => (
         <Card>
-        <Card.Body>
-            <Row>
-                <Col className="col-2"><Card.Img src={row.owner.avatar_url} /></Col>
-                <Col>
-                    <Card.Title>{ `${row.name}` }</Card.Title>
-                    <Card.Subtitle className="mb-2 text-muted">Author: { `${row.owner.login}` }</Card.Subtitle>
-                    <Card.Subtitle className="mb-2">Last Update: { `${row.updated_at}` }</Card.Subtitle>
-                </Col>
-                <Col>
-                    <Card.Text>{ `${row.description}` }</Card.Text>
-                    <Card.Text>{ `${row.language}` }</Card.Text>
-                    <Card.Link href={row.url}>Repo Link</Card.Link>
-                </Col>
-            </Row>
-        </Card.Body>
-    </Card>
+            <Card.Body>
+                <Row>
+                    <Col className="col-2"><Card.Img src={row.owner.avatar_url} /></Col>
+                    <Col>
+                        <Card.Title>{ `${row.name}` }</Card.Title>
+                        <Card.Subtitle className="mb-2 text-muted">Author: { `${row.owner.login}` }</Card.Subtitle>
+                        <Card.Subtitle className="mb-2">Last Update: { `${row.updated_at}` }</Card.Subtitle>
+                    </Col>
+                    <Col>
+                        <Card.Text>{ `${row.description}` }</Card.Text>
+                        <Card.Text>{ `${row.language}` }</Card.Text>
+                        <Card.Link href={row.url}>Repo Link</Card.Link>
+                    </Col>
+                </Row>
+            </Card.Body>
+        </Card>
     ),
     showExpandColumn: false
   };

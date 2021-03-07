@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { InputGroup, Form, FormControl, Button, Col, Row, Container } from 'react-bootstrap';
 
 export class Search extends Component {
@@ -10,7 +10,7 @@ export class Search extends Component {
         var query = event.target[0].value;
         this.props.history.push({
             pathname: '/results',
-            state: { detail: event.target[0].value }
+            state: { detail: query }
         })
       }
 
