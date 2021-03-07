@@ -2,14 +2,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React, { Component } from 'react';
 import { Card } from 'react-bootstrap';
 
+//-------Under construction, not in use---------//
+
 export class Details extends Component {
-    constructor(props) {
-        super(props)
-        console.log(props)
+
+    componentDidMount() {
+        console.log(this.props.location.state.detail);
     }
 
     render () {
         return (
+            //Actual card layout is found in table.js
             <Card style={{ width: '18rem' }}>
                 <Card.Body>
                     <Card.Title>Card Title</Card.Title>
