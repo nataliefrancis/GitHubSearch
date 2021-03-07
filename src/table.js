@@ -97,13 +97,15 @@ export class Table extends Component {
         axios.get(`https://api.github.com/search/repositories?q=`+querystring)
           .then(res => {
             console.log(res);
-            this.setState({    
-                repository: res.data.items  
-            })
-            .catch(error => {
-                this.setState({error: error.message});
+            try {
+                this.setState({    
+                    repository: res.data.items  
+                })
+            } 
+            catch(error) {
                 console.log("API error response: "+error);
-            });
+            }
+            // To-Do: .catch throws error
         })
     }
 
